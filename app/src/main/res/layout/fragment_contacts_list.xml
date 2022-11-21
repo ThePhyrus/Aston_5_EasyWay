@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/mr_background_color"
     android:orientation="vertical"
     android:padding="10dp"
     tools:context=".ContactsListFragment">
@@ -15,8 +16,10 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/margin_double"
         android:clickable="true"
+        android:elevation="@dimen/card_elevation"
         android:focusable="true"
-        android:padding="@dimen/padding">
+        android:padding="@dimen/padding"
+        app:cardCornerRadius="@dimen/card_corner_radius">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -100,8 +103,10 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/margin_double"
         android:clickable="true"
+        android:elevation="@dimen/card_elevation"
         android:focusable="true"
-        android:padding="@dimen/padding">
+        android:padding="@dimen/padding"
+        app:cardCornerRadius="@dimen/card_corner_radius">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -179,14 +184,17 @@
 
     </com.google.android.material.card.MaterialCardView>
 
+    <!--    THIRD CONTACT CARD-->
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cvThird"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/margin_double"
         android:clickable="true"
+        android:elevation="@dimen/card_elevation"
         android:focusable="true"
-        android:padding="@dimen/padding">
+        android:padding="@dimen/padding"
+        app:cardCornerRadius="@dimen/card_corner_radius">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

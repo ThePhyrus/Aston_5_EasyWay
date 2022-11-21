@@ -15,7 +15,6 @@ class ContactsListFragment : Fragment() {
     private var _binding: FragmentContactsListBinding? = null
     private val binding: FragmentContactsListBinding get() = _binding!!
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -71,7 +70,7 @@ class ContactsListFragment : Fragment() {
 
     private fun onThirdCardClick() {
         binding.cvThird.setOnClickListener {
-            navigator().launchDetailsFragment(
+            navigator().launchContactDetailsFragment(
                 Contact(
                     id = 3,
                     name = binding.tvNamePlaceholderThird.text.toString(),
@@ -84,7 +83,7 @@ class ContactsListFragment : Fragment() {
 
     private fun onSecondCardClick() {
         binding.cvSecond.setOnClickListener {
-            navigator().launchDetailsFragment(
+            navigator().launchContactDetailsFragment(
 
                 Contact(
                     id = 2,
@@ -98,7 +97,7 @@ class ContactsListFragment : Fragment() {
 
     private fun onFirstCardClick() {
         binding.cvFirst.setOnClickListener {
-            navigator().launchDetailsFragment(
+            navigator().launchContactDetailsFragment(
                 Contact(
                     id = 1,
                     name = binding.tvNamePlaceholder.text.toString(),

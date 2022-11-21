@@ -39,7 +39,7 @@ class ContactDetailsFragment : Fragment() {
 
     private fun onBtnSaveClick() {
         binding.btnSave.setOnClickListener {
-            navigator().launchContactsFragment(
+            navigator().launchContactsListFragment(
                 Contact(
                     id = contact.id,
                     name = binding.etEditName.text.toString(),

@@ -8,4 +8,6 @@
     <dimen name="padding">8dp</dimen>
     <dimen name="text_size_16sp">16sp</dimen>
     <dimen name="guideline_begin">160dp</dimen>
+    <dimen name="card_elevation">8dp</dimen>
+    <dimen name="card_corner_radius">10dp</dimen>
 </resources>

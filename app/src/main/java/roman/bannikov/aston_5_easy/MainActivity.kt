@@ -3,7 +3,10 @@ package roman.bannikov.aston_5_easy
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.fragment.app.FragmentManager
+
+
 
 class MainActivity : AppCompatActivity(), ContactNavigator  {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,7 +22,7 @@ class MainActivity : AppCompatActivity(), ContactNavigator  {
 
     }
 
-    override fun launchDetailsFragment(
+    override fun launchContactDetailsFragment(
         contact: Contact
     ) {
         Log.e("TAg", "SECOND 1")
@@ -31,7 +34,7 @@ class MainActivity : AppCompatActivity(), ContactNavigator  {
             .commit()
     }
 
-    override fun launchContactsFragment(
+    override fun launchContactsListFragment(
         contact: Contact
     ) {
         supportFragmentManager
