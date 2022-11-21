@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="tv_details_text_size">50sp</dimen>
+    <dimen name="margin_50dp">50dp</dimen>
+    <dimen name="text_size_30sp">30sp</dimen>
+    <dimen name="margin">8dp</dimen>
+    <dimen name="margin_double">16dp</dimen>
+    <dimen name="padding">8dp</dimen>
+    <dimen name="text_size_16sp">16sp</dimen>
+    <dimen name="guideline_begin">160dp</dimen>
+</resources>
