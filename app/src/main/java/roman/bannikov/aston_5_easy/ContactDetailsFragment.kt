@@ -8,13 +8,12 @@ import android.view.ViewGroup
 import roman.bannikov.aston_5_easy.databinding.FragmentContactDetailsBinding
 
 
-private const val KEY_CONTACT = "CONTACT"
-
 class ContactDetailsFragment : Fragment() {
 
     private var _binding: FragmentContactDetailsBinding? = null
     private val binding: FragmentContactDetailsBinding get() = _binding!!
     private lateinit var contact: Contact
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,11 +30,13 @@ class ContactDetailsFragment : Fragment() {
         onBtnSaveClick()
     }
 
+
     private fun getParcelableData() {
         arguments?.let {
             contact = it.getParcelable(KEY_CONTACT)!!
         }
     }
+
 
     private fun onBtnSaveClick() {
         binding.btnSave.setOnClickListener {
@@ -50,7 +51,11 @@ class ContactDetailsFragment : Fragment() {
         }
     }
 
+
     companion object {
+
+        private const val KEY_CONTACT = "CONTACT"
+
         @JvmStatic
         fun newInstance(contact: Contact) =
             ContactDetailsFragment().apply {
@@ -59,6 +64,7 @@ class ContactDetailsFragment : Fragment() {
                 }
             }
     }
+
 
     override fun onDestroy() {
         super.onDestroy()

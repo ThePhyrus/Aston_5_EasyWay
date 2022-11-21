@@ -1,14 +1,11 @@
 package roman.bannikov.aston_5_easy
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
 
 
-
-class MainActivity : AppCompatActivity(), ContactNavigator  {
+class MainActivity : AppCompatActivity(), ContactNavigator {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -19,28 +16,32 @@ class MainActivity : AppCompatActivity(), ContactNavigator  {
                 .commit()
         }
 
-
     }
 
-    override fun launchContactDetailsFragment(
-        contact: Contact
-    ) {
-        Log.e("TAg", "SECOND 1")
 
+    override fun launchContactDetailsFragment(contact: Contact) {
         supportFragmentManager
             .beginTransaction()
-            .addToBackStack("STACK")
-            .replace(R.id.containerForFragment, ContactDetailsFragment.newInstance(contact = contact))
+            .addToBackStack(TAG_CONTACT_DETAILS_FRAGMENT)
+            .replace(
+                R.id.containerForFragment,
+                ContactDetailsFragment.newInstance(contact = contact)
+            )
             .commit()
     }
 
-    override fun launchContactsListFragment(
-        contact: Contact
-    ) {
+
+    override fun launchContactsListFragment(contact: Contact) {
         supportFragmentManager
-            .popBackStack("STACK", FragmentManager.POP_BACK_STACK_INCLUSIVE)
+            .popBackStack(TAG_CONTACT_LIST_FRAGMENT, FragmentManager.POP_BACK_STACK_INCLUSIVE)
         supportFragmentManager.beginTransaction()
             .replace(R.id.containerForFragment, ContactsListFragment.newInstance(contact = contact))
             .commit()
+    }
+
+
+    companion object {
+        private const val TAG_CONTACT_LIST_FRAGMENT = "ContactListFragment"
+        private const val TAG_CONTACT_DETAILS_FRAGMENT = "ContactDetailsFragment"
     }
 }

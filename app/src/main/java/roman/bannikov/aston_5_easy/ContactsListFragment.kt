@@ -1,19 +1,18 @@
 package roman.bannikov.aston_5_easy
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import roman.bannikov.aston_5_easy.databinding.FragmentContactsListBinding
 
-
-private const val KEY_CONTACT = "CONTACT"
 
 class ContactsListFragment : Fragment() {
 
     private var _binding: FragmentContactsListBinding? = null
     private val binding: FragmentContactsListBinding get() = _binding!!
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -22,6 +21,7 @@ class ContactsListFragment : Fragment() {
         _binding = FragmentContactsListBinding.inflate(inflater, container, false)
         return binding.root
     }
+
 
     private fun getParcelableData() {
         arguments?.let {
@@ -56,17 +56,20 @@ class ContactsListFragment : Fragment() {
         }
     }
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         getParcelableData()
         initClicks()
     }
 
+
     private fun initClicks() {
         onFirstCardClick()
         onSecondCardClick()
         onThirdCardClick()
     }
+
 
     private fun onThirdCardClick() {
         binding.cvThird.setOnClickListener {
@@ -80,6 +83,7 @@ class ContactsListFragment : Fragment() {
             )
         }
     }
+
 
     private fun onSecondCardClick() {
         binding.cvSecond.setOnClickListener {
@@ -95,6 +99,7 @@ class ContactsListFragment : Fragment() {
         }
     }
 
+
     private fun onFirstCardClick() {
         binding.cvFirst.setOnClickListener {
             navigator().launchContactDetailsFragment(
@@ -108,7 +113,11 @@ class ContactsListFragment : Fragment() {
         }
     }
 
+
     companion object {
+
+        private const val KEY_CONTACT = "CONTACT"
+
         @JvmStatic
         fun newInstance(contact: Contact) =
             ContactsListFragment().apply {
